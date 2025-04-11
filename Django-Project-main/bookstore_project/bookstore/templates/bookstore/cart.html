@@ -1,0 +1,12 @@
+{% extends 'bookstore/base.html' %}
+{% block content %}
+<h2>Your Cart</h2>
+<ul>
+    {% for book in books %}
+    <li>{{ book.title }} - ${{ book.price }}</li>
+    {% empty %}
+    <li>Your cart is empty.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'book_list' %}">Back to Books</a>
+{% endblock %}
